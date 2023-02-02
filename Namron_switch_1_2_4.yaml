@@ -1,8 +1,7 @@
 blueprint:
   name: zwave_js - Namron 2-kanal bryter
   description: |
-    Controll lights and other with Namron z-wave remote
-
+    Controll lights and other with Namron Z-wave remote
   domain: automation
   input:
     remote:
@@ -86,7 +85,7 @@ blueprint:
       description: Action to run on long press release on Two off button 
       default: []
       selector:
-        action:         
+        action:  
         
 mode: restart
 max_exceeded: silent
@@ -137,56 +136,56 @@ action:
 
       - conditions:
           - "{{ command == 'move_with_on_off' }}"
-          - "{{ cluster_id == 8 }}"
+          - "{{ cluster_id == 0 }}"
           - "{{ endpoint_id == 0 }}"
           - "{{ move_mode == 'MoveMode.Down' }}"
         sequence: !input channel_one_off_long
         
       - conditions:
           - "{{ command == 'stop' }}"
-          - "{{ cluster_id == 8 }}"
-          - "{{ endpoint_id == 0 }}"
+          - "{{ cluster_id == 0 }}"
+          - "{{ endpoint_id == 1 }}"
           - "{{ args == [] }}"
         sequence: !input channel_one_off_stop
 #-------------------------------------------------------      
       - conditions:
           - "{{ command == 'on' }}"
           - "{{ property_key == 003 }}"
-          - "{{ endpoint_id == 0 }}"
+          - "{{ endpoint_id == 2 }}"
           - "{{ args == [] }}"
         sequence: !input channel_two_on_short
 
       - conditions:
           - "{{ command == 'move_with_on_off' }}"
-          - "{{ cluster_id == 8 }}"
+          - "{{ cluster_id == 0 }}"
           - "{{ endpoint_id == 2 }}"
           - "{{ move_mode == 'MoveMode.Up' }}"
         sequence: !input channel_two_on_long
         
       - conditions:
           - "{{ command == 'stop' }}"
-          - "{{ cluster_id == 8 }}"
+          - "{{ cluster_id == 0 }}"
           - "{{ endpoint_id == 2 }}"
           - "{{ args == [] }}"
         sequence: !input channel_two_on_stop
 
       - conditions:
           - "{{ command == 'off' }}"
-          - "{{ cluster_id == 6 }}"
+          - "{{ property_key == 004 }}"
           - "{{ endpoint_id == 2 }}"
           - "{{ args == [] }}"
         sequence: !input channel_two_off_short
 
       - conditions:
           - "{{ command == 'move_with_on_off' }}"
-          - "{{ cluster_id == 8 }}"
+          - "{{ cluster_id == 0 }}"
           - "{{ endpoint_id == 2 }}"
           - "{{ move_mode == 'MoveMode.Down' }}"
         sequence: !input channel_two_off_long
         
       - conditions:
           - "{{ command == 'stop' }}"
-          - "{{ cluster_id == 8 }}"
+          - "{{ cluster_id == 0 }}"
           - "{{ endpoint_id == 2 }}"
           - "{{ args == [] }}"
         sequence: !input channel_two_off_stop
