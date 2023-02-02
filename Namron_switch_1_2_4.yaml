@@ -10,7 +10,7 @@ blueprint:
       description: Namron controller
       selector:
         device:
-          manufacturer: NAMRON AS
+          manufacturer: NAMRON
 
           
     channel_one_on_short:
