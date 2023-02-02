@@ -11,7 +11,7 @@ blueprint:
       selector:
         device:
           integration: zwave_js
-          manufacturer: NAMRON
+          manufacturer: Namron
 
           
     channel_one_on_short:
