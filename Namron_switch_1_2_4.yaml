@@ -10,7 +10,6 @@ blueprint:
       description: Namron controller
       selector:
         device:
-          integration: zwave_js
           manufacturer: NAMRON AS
 
           
