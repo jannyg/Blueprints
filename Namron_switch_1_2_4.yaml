@@ -1,5 +1,5 @@
 blueprint:
-  name: Namron 1, 2 og 4 kanal bryter
+  name: zwave_js - Namron 1, 2 og 4 kanal bryter
   description: |
     Controll lights and other with Namron zigbee remote
 
@@ -10,7 +10,7 @@ blueprint:
       description: Namron controller
       selector:
         device:
-          integration: zha, zwave_js
+          integration: zwave_js
           manufacturer: NAMRON AS
 
           
